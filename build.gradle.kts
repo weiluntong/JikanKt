@@ -34,6 +34,9 @@ dependencies {
     //kotlin-logging
     implementation("io.github.microutils:kotlin-logging:1.7.7")
     implementation("org.slf4j:slf4j-simple:1.7.26")
+
+    //testing framework
+    testImplementation("junit:junit:4.12")
 }
 
 tasks {
@@ -42,5 +45,8 @@ tasks {
     }
     compileTestKotlin {
         kotlinOptions.jvmTarget = "1.8"
+    }
+    test {
+        useJUnit()
     }
 }
