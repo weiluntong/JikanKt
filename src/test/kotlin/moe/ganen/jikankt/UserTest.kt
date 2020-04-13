@@ -11,9 +11,13 @@ class UserTest {
     @Test
     fun GetUserTest() {
         runBlocking {
-            val username: String = "weiluntong"
-            val user: User = JikanKt.getUser(username)
-            Assert.assertEquals(username, user.username)
+            var expectedResult: User = User(userId = 1311859, username = "weiluntong", url = "https://myanimelist.net/profile/weiluntong")
+
+            var actualResult: User = JikanKt.getUser(expectedResult.username)
+
+            Assert.assertEquals(expectedResult.userId, actualResult.userId)
+            Assert.assertEquals(expectedResult.username, actualResult.username)
+            Assert.assertEquals(expectedResult.url, actualResult.url)
         }
     }
 }

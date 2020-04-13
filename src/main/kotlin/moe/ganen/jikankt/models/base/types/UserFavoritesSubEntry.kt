@@ -1,6 +1,7 @@
 package moe.ganen.jikankt.models.base.types
 
 import com.google.gson.annotations.SerializedName
+
 import moe.ganen.jikankt.models.base.MalEntity
 
 /**
