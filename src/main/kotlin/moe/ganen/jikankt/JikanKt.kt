@@ -19,6 +19,7 @@ import moe.ganen.jikankt.models.season.Season
 import moe.ganen.jikankt.models.season.SeasonArchives
 import moe.ganen.jikankt.models.season.SeasonType
 import moe.ganen.jikankt.models.top.*
+import moe.ganen.jikankt.models.user.User
 import moe.ganen.jikankt.utils.InterfaceAdapter
 import moe.ganen.jikankt.utils.deserialize
 
@@ -336,6 +337,21 @@ object JikanKt {
         gson.deserialize(
             restClient.request("club/$clubId/members/$page"),
             ClubMembers::class.java
+        )
+
+    //endregion
+
+    //region User
+
+    /**
+     * Fetches entries on user's anime list.
+     * @param username: Username from MyAnimeList.
+     * @return animelist.
+     */
+    suspend fun getUser(username: String): User =
+        gson.deserialize(
+            restClient.request("user/$username/"),
+            User::class.java
         )
 
     //endregion
