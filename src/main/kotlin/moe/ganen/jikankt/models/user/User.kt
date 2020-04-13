@@ -3,6 +3,8 @@ package moe.ganen.jikankt.models.user
 import com.google.gson.annotations.SerializedName
 import moe.ganen.jikankt.models.base.Entity
 import moe.ganen.jikankt.models.base.types.UserAnimeStats
+import moe.ganen.jikankt.models.base.types.UserMangaStats
+import moe.ganen.jikankt.models.base.types.UserFavorites
 import java.util.*
 
 data class User(
@@ -66,11 +68,17 @@ data class User(
     @SerializedName("anime_stats")
     val animeStats: UserAnimeStats? = null,
 
-    // /**
-    //  * Member favorites count.
-    //  */
-    // @SerializedName("favorites")
-    // val memberFavorites: Int? = null,
+    /**
+     * User's MyAnimeList stats.
+     */
+    @SerializedName("manga_stats")
+    val mangaStats: UserMangaStats? = null,
+
+    /**
+     * User's favorites.
+     */
+    @SerializedName("favorites")
+    val favorites: UserFavorites? = null,
 
     /**
      * User's detail.
