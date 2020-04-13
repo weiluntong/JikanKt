@@ -1,11 +1,12 @@
 package moe.ganen.jikankt.models.user
 
 import com.google.gson.annotations.SerializedName
+import java.util.*
+
 import moe.ganen.jikankt.models.base.Entity
 import moe.ganen.jikankt.models.base.types.UserAnimeStats
 import moe.ganen.jikankt.models.base.types.UserMangaStats
 import moe.ganen.jikankt.models.base.types.UserFavorites
-import java.util.*
 
 data class User(
     /**
